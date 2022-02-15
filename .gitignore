@@ -1,8 +1,6 @@
 照片
 *.jpg
 *.zip
-*.ppt
-*.pptx
 *.h5
 *.onnx
 *.pb
