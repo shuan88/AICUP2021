@@ -1,0 +1,17 @@
+照片
+*.jpg
+*.zip
+*.ppt
+*.pptx
+*.h5
+*.onnx
+*.pb
+*.bin
+.DS_store
+
+照片壓縮
+AIMV/ 2D/ User/ Manual/*
+代码
+model
+web/saved_model
+web/imagenet_mobilenet_v1_050_192_classification_3_default_1
