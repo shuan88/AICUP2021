@@ -2,15 +2,17 @@
 import cv2
 import numpy as np
 import os
+import time
 
-print(cv2 .__version__)
 
 model_name = "inceptionv3_2_Fine-tuning"
 full_model_path = 'model.onnx'
 IMAGE_SIZE = (256,256)
-class_name = "ok"
-# class_name = "ng"
-dir_name = "../照片/New_Data/station4_white_pin2021_5_26_1621999356/training_data/"
+# class_name = "ok"
+class_name = "ng"
+dir_name = "../照片/New_Data/station4_white_pin2021-2-9_1612936555/training_data/"
+# dir_name = "../照片/station4_white_pin2021-2-23_1614072478/training_data/"
+
 classes = ["ng","ok"]
 
 # https://docs.opencv.org/3.4/d6/d0f/group__dnn.html
@@ -33,6 +35,7 @@ print(out)
 test_img_dir = dir_name + class_name
 print(len(os.listdir(test_img_dir)))
 error_count = 0
+start_time = time.time()
 for img_name in os.listdir(test_img_dir):
     try:
         # img = cv2.resize(cv2.imread("{}/{}".format(test_img_dir,img_name)) , IMAGE_SIZE)
@@ -46,12 +49,17 @@ for img_name in os.listdir(test_img_dir):
         if predicted_index != (classes.index(class_name)) :
             # print(img_name , ":" , prediction_scores)
             error_count += 1
-            cv2.imshow("{},{}".format(error_count,prediction_scores) ,\
-                cv2.resize(cv2.imread("{}/{}".format(test_img_dir,img_name)) , IMAGE_SIZE))
-            cv2.waitKey(1)
+            # cv2.imshow("{},{}".format(error_count,prediction_scores) ,\
+            #     cv2.resize(cv2.imread("{}/{}".format(test_img_dir,img_name)) , IMAGE_SIZE))
+            # cv2.waitKey(1)
     except:
         os.remove("{}/{}".format(test_img_dir,img_name))
         # continue
+print("--- %s seconds ---" % (time.time() - start_time))
+
+acc = 1. -(error_count/len(os.listdir(test_img_dir)))        
 print(error_count)
-print("predicted score : " , 1. -(error_count/len(os.listdir(test_img_dir))) )
+print("predicted score : %.2f"  %acc)
 cv2.destroyAllWindows()
+
+print(cv2 .__version__)
