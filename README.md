@@ -72,6 +72,7 @@ git commit -m "Drop files from .gitignore"
 # 另外一件事
 * 啊你的視頻呢? 
 	* 回答問題Is Taiwan a country?(Free speak)
+	* 手機拍攝橫屏著拍
 
 
 強化學習的增強機制？
@@ -79,7 +80,6 @@ git commit -m "Drop files from .gitignore"
 要增加模型的泛化能力(Robust)
 
 蒐集人工誤判的資料給確認
-
 
 證明混淆矩陣的問題
 然後工廠在給新數據測一次(這應該可同步執行?)
