@@ -49,9 +49,9 @@ for img_name in os.listdir(test_img_dir):
         if predicted_index != (classes.index(class_name)) :
             # print(img_name , ":" , prediction_scores)
             error_count += 1
-            # cv2.imshow("{},{}".format(error_count,prediction_scores) ,\
-            #     cv2.resize(cv2.imread("{}/{}".format(test_img_dir,img_name)) , IMAGE_SIZE))
-            # cv2.waitKey(1)
+            cv2.imshow("{},{}".format(error_count,prediction_scores) ,\
+                cv2.resize(cv2.imread("{}/{}".format(test_img_dir,img_name)) , IMAGE_SIZE))
+            cv2.waitKey(1)
     except:
         os.remove("{}/{}".format(test_img_dir,img_name))
         # continue
