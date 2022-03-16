@@ -4,7 +4,7 @@ import numpy as np
 import os
 
 model_name = "inceptionv3_2_Fine-tuning"
-IMAGE_SIZE = (256,256)
+IMAGE_SIZE = (299,299)
 
 # model_path ='../model/{}/'.format(model_name)
 # model_path ='../model/inceptionv3_2_Fine-tuning/saved_model.pb'

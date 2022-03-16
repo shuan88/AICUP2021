@@ -12,7 +12,7 @@ for filename in os.listdir(output_dir):
 
 model_name = "inceptionv3_2_Fine-tuning"
 full_model_path = './src/model.onnx'
-IMAGE_SIZE = (256,256)
+IMAGE_SIZE = (299,299)
 class_name = "ok"
 # class_name = "ng"
 dir_name = "./照片/New_Data/station4_white_pin2021-2-9_1612936555/training_data/"
