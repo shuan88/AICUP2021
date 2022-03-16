@@ -1,4 +1,7 @@
+!/.gitignore
+._*
 照片
+img
 *.jpg
 *.zip
 *.h5
@@ -11,5 +14,7 @@
 AIMV/ 2D/ User/ Manual/*
 代码
 model/*
+
 web/saved_model
 web/imagenet_mobilenet_v1_050_192_classification_3_default_1
+
